@@ -28,4 +28,14 @@ umlaut.bogoSort = (array) ->
 
   array
 
+umlaut.bogoFind = (array, func) ->
+  match = null
+  while !match? && array.length > 0
+    array = shuffle(array)
+    [first, array...] = array
+    if func(first)
+      match = first
+
+  return match
+
 module.exports = umlaut
