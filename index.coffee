@@ -2,17 +2,17 @@ umlaut = {}
 
 shuffle = (array) ->
   counter = array.length
+  shuffledArray = []
 
   while counter > 0
     index = Math.floor(Math.random() * counter)
 
     counter--
 
-    temp = array[counter]
-    array[counter] = array[index]
-    array[index] = temp
+    shuffledArray.push(array[index])
+    array[index] = array[counter]
 
-  array
+  shuffledArray
 
 umlaut.bogoSort = (array) ->
   checkIsSorted = (sortAttempt) ->
