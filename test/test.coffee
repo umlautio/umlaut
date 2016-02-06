@@ -35,3 +35,18 @@ describe "bogoFind", ->
     result = umlaut.bogoFind([], (item) -> item == 5)
 
     assert.equal(result, null)
+
+describe "filter", ->
+  it "returns a filtered array", ->
+    arr = [1, 2, 3, 4]
+
+    result = umlaut.filter(arr, (item) -> item % 2 == 0)
+
+    assert.deepEqual(result, [2, 4])
+
+  it "returns an empty array if no elements match", ->
+    arr = [1, 3, 5, 7]
+
+    result = umlaut.filter(arr, (item) -> item % 2 == 0)
+
+    assert.deepEqual(result, [])

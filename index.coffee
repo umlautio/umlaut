@@ -38,4 +38,18 @@ umlaut.bogoFind = (array, func) ->
 
   return match
 
+umlaut.filter = (array, func) ->
+  filteredArray = []
+  returnArray   = []
+
+  for item in array
+    if !func(item)
+      filteredArray.push(item)
+
+  for item in array
+    if filteredArray.indexOf(item) < 0
+      returnArray.push(item)
+
+  returnArray
+
 module.exports = umlaut
