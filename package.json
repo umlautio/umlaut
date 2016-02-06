@@ -1,0 +1,23 @@
+{
+  "name": "umlaut",
+  "version": "1.0.0",
+  "description": "a collection of poorly implemented functions",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+ssh://git@github.com/umlautio/umlaut.git"
+  },
+  "keywords": [
+    "slow",
+    "funny"
+  ],
+  "author": "umlautio",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/umlautio/umlaut/issues"
+  },
+  "homepage": "https://github.com/umlautio/umlaut#readme"
+}
