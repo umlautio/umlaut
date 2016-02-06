@@ -1,7 +1,7 @@
 umlaut = {}
 
 shuffle = (array) ->
-  counter = array.length
+  counter       = array.length
   shuffledArray = []
 
   while counter > 0
