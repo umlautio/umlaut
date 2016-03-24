@@ -50,3 +50,25 @@ describe "filter", ->
     result = umlaut.filter(arr, (item) -> item % 2 == 0)
 
     assert.deepEqual(result, [])
+
+describe "padLeft", ->
+  it "returns the string padded with spaces if no padding char is given", ->
+    result = umlaut.padLeft('hello', 3)
+
+    assert.equal(result, '   hello')
+
+  it "returns the string padded with the given char", ->
+    result = umlaut.padLeft('hello', 3, 'y')
+
+    assert.equal(result, 'yyyhello')
+
+describe "padRight", ->
+  it "returns the string padded with spaces if no padding char is given", ->
+    result = umlaut.padRight('hello', 3)
+
+    assert.equal(result, 'hello   ')
+
+  it "returns the string padded with the given char", ->
+    result = umlaut.padRight('hello', 3, 'y')
+
+    assert.equal(result, 'helloyyy')

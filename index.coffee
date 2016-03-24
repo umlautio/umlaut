@@ -52,4 +52,20 @@ umlaut.filter = (array, func) ->
 
   returnArray
 
+umlaut.padLeft = (string, len, char = ' ') ->
+  array = string.split('')
+
+  for [1..len]
+    array.unshift(char)
+
+  return array.join('')
+
+umlaut.padRight = (string, len, char = ' ') ->
+  array = string.split('')
+
+  for [1..len]
+    array.push(char)
+
+  return array.join('')
+
 module.exports = umlaut
