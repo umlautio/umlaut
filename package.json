@@ -22,7 +22,17 @@
   },
   "homepage": "https://github.com/umlautio/umlaut#readme",
   "dependencies": {
+    "add-one": "^1.0.3",
     "coffee-script": "^1.10.0",
-    "mocha": "^2.4.5"
+    "exists": "^1.0.0",
+    "false": "0.0.4",
+    "formula-subtract": "^1.0.0",
+    "is-null-like": "^1.0.3",
+    "is-zero": "^0.1.1",
+    "lodash.add": "^3.4.3",
+    "mocha": "^2.4.5",
+    "string-length": "^1.0.1",
+    "to-string-x": "^1.0.5",
+    "validate.io-less-than": "^1.0.2"
   }
 }

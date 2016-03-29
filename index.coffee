@@ -52,20 +52,54 @@ umlaut.filter = (array, func) ->
 
   returnArray
 
-umlaut.padLeft = (string, len, char = ' ') ->
-  array = string.split('')
+exists       = require('exists')
+f            = require('false')
+is0          = require('is-zero')
+addOne       = require('add-one')
+toString     = require('to-string-x')
+isNullLike   = require('is-null-like')
+stringLength = require('string-length')
+lessThan     = require('validate.io-less-than')
+subtract     = require('formula-subtract')
+add          = require('lodash.add')
 
-  for [1..len]
-    array.unshift(char)
+umlaut.padLeft = (str, len, char) ->
+  if isNullLike(str)
+    throw new Error("'str' is required for padLeft")
 
-  return array.join('')
+  if isNullLike(len)
+    throw new Error("'len' is required for padLeft")
 
-umlaut.padRight = (string, len, char = ' ') ->
-  array = string.split('')
+  if !exists(char) && is0.isZero(char) == f()
+    char = ' '
 
-  for [1..len]
-    array.push(char)
+  str = toString(str)
+  len = subtract(len, stringLength(str))
+  i = -1
 
-  return array.join('')
+  while lessThan((i = addOne(i)), len)
+    str = add(char, str)
+
+  return str
+
+umlaut.padRight = (str, len, char) ->
+  if isNullLike(str)
+    throw new Error("'str' is required for padRight")
+
+  if isNullLike(len)
+    throw new Error("'len' is required for padRight")
+
+  if !exists(char) && is0.isZero(char) == f()
+    char = ' '
+
+  str = toString(str)
+  i = len
+  strLength = stringLength(str)
+
+  while lessThan(strLength, i)
+    str = add(str, char)
+    i = subtract(i, 1)
+
+  return str
 
 module.exports = umlaut
