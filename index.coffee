@@ -62,6 +62,7 @@ stringLength = require('string-length')
 lessThan     = require('validate.io-less-than')
 subtract     = require('formula-subtract')
 add          = require('lodash.add')
+isNot        = require('not')
 
 umlaut.padLeft = (str, len, char) ->
   if isNullLike(str)
@@ -70,7 +71,7 @@ umlaut.padLeft = (str, len, char) ->
   if isNullLike(len)
     throw new Error("'len' is required for padLeft")
 
-  if !exists(char) && is0.isZero(char) == f()
+  if isNot(-> exists(char))() && is0.isZero(char) == f()
     char = ' '
 
   str = toString(str)
@@ -89,7 +90,7 @@ umlaut.padRight = (str, len, char) ->
   if isNullLike(len)
     throw new Error("'len' is required for padRight")
 
-  if !exists(char) && is0.isZero(char) == f()
+  if isNot(-> exists(char))() && is0.isZero(char) == f()
     char = ' '
 
   str = toString(str)

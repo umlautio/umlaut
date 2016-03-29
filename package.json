@@ -31,6 +31,7 @@
     "is-zero": "^0.1.1",
     "lodash.add": "^3.4.3",
     "mocha": "^2.4.5",
+    "not": "^0.1.0",
     "string-length": "^1.0.1",
     "to-string-x": "^1.0.5",
     "validate.io-less-than": "^1.0.2"
